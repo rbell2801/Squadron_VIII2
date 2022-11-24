@@ -8,6 +8,15 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
 
     public float min_Y, max_Y;
+    
+    public float attack_Timer = 0.35f;
+    private float current_Attack_Timer;
+    private bool canAttack;
+    
+    [SerializeField]
+    private GameObject player_Bullet;
+    [SerializeField]
+    private GameObject AttackPoint;
 
     
         // Start is called before the first frame update

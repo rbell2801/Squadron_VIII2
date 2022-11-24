@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ships
+    uniqueID: 1886036379
+    locked: 0
+  - name: Bullets
+    uniqueID: 1759568417
+    locked: 0
+  - name: BG
+    uniqueID: 1215037053
+    locked: 0
