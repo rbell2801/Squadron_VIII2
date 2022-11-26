@@ -9,19 +9,20 @@ public class PlayerController : MonoBehaviour
 
     public float min_Y, max_Y;
     
+    [SerializeField]
+    private GameObject player_Bullet;
+    
+    [SerializeField]
+    private Transform AttackPoint;
+    
     public float attack_Timer = 0.35f;
     private float current_Attack_Timer;
     private bool canAttack;
     
-    [SerializeField]
-    private GameObject player_Bullet;
-    [SerializeField]
-    private GameObject AttackPoint;
-
-    
-        // Start is called before the first frame update
+    // Start is called before the first frame update
         void Start()
         {
+            current_Attack_Timer = attack_Timer;
 
         }
 
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         void Update()
         {
             MovePlayer();
+            Attack();
         }
         //The move player 
         void MovePlayer()
@@ -56,6 +58,27 @@ public class PlayerController : MonoBehaviour
 
                 transform.position = temp;
             }
+            
         }
 
-    }
+        void Attack()
+        {
+            attack_Timer += Time.deltaTime;
+            if (attack_Timer > current_Attack_Timer)
+            {
+                canAttack = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow)) 
+            {
+                if (canAttack)
+                {
+                    canAttack = false;
+                    attack_Timer = 0f;
+
+                    Instantiate(player_Bullet, AttackPoint.position, Quaternion.identity);
+                }
+            }
+        }// attack
+
+    }// class

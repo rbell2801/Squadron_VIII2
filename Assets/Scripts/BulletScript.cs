@@ -10,7 +10,7 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("DeactivateGameObject", deactivate_Timer);
     }
 
     // Update is called once per frame
@@ -25,5 +25,10 @@ public class BulletScript : MonoBehaviour
         temp.x += speed * Time.deltaTime;
         transform.position = temp;
 
+    }
+
+    void DeactivateGameObject()
+    {
+        gameObject.SetActive(false);
     }
 }

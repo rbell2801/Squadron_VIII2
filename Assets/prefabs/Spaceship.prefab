@@ -172,7 +172,8 @@ MonoBehaviour:
   min_Y: -3.96
   max_Y: 4.02
   player_Bullet: {fileID: 1967184459122144563, guid: 1252748fe24b17a41a53e08c1e7372fa, type: 3}
-  AttackPoint: {fileID: 7512122924736966549}
+  AttackPoint: {fileID: 1891728821032693297}
+  attack_Timer: 0.35
 --- !u!1 &7512122924736966549
 GameObject:
   m_ObjectHideFlags: 0
