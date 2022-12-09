@@ -17,5 +17,6 @@ public class BackgroundMusic : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 }
