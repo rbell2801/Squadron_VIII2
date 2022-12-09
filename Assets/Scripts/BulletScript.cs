@@ -31,4 +31,9 @@ public class BulletScript : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        DeactivateGameObject();
+    }
 }
